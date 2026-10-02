@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GDG AITR Portal Review & Suggestions</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="page-container">
+    
+    <!-- 1. Title -->
+    <header class="card title-card card-dark">
+      <h1>GDG AITR Portal Review & Suggestions</h1>
+    </header>
+
+    <!-- 2. Website Link -->
+    <section class="card link-card card-dark">
+      <h2>Website Link</h2>
+      <p>
+        Reviewed Website: 
+        <a href="https://gdgocaitr.vercel.app/" target="_blank" rel="noopener noreferrer">
+          https://gdgocaitr.vercel.app/
+        </a>
+      </p>
+    </section>
+
+    <!-- 3. What I Checked -->
+    <section class="card card-medium">
+      <h2>What I Checked</h2>
+      <ul class="checklist">
+        <li>
+          <strong>Broken links:</strong> Tested all 18 primary internal routes and external community links (Home, Announcements, Team, About, Gallery, Contact, Events, Event Registration, Login, Signup, Recruitment, Guidelines, Privacy, Terms) for 404 or dead ends.
+        </li>
+        <li>
+          <strong>Text alignment:</strong> Inspected hero banners, heading hierarchy, paragraph alignments, and card labels on both desktop and mobile viewports.
+        </li>
+        <li>
+          <strong>Mobile layout:</strong> Inspected mobile viewport scaling, hamburger menu visibility, horizontal overflow, and touch usability across multiple phone widths (375px, 390px, 480px, 768px).
+        </li>
+        <li>
+          <strong>Visual glitches:</strong> Checked for unwanted element clipping, off-screen overflow, card shadow consistency, and image rendering.
+        </li>
+      </ul>
+    </section>
+
+    <!-- 4. Findings -->
+    <section class="card card-medium">
+      <h2>Findings</h2>
+      <p class="section-intro">
+        Detailed breakdown of observations and issues found across all checked categories:
+      </p>
+
+      <div class="findings-list">
+        
+        <!-- Category 1 -->
+        <div class="finding-item">
+          <div class="finding-header">
+            <h3>1. Broken Links</h3>
+            <span class="badge badge-success">No major issue found</span>
+          </div>
+          <p>
+            All 18 tested routes (/announcements, /team, /about, /gallery, /contact, /events, /login, /signup, etc.) returned HTTP 200 status codes with no broken 404 pages. The only minor item noted was on the Contact page, where the physical location item uses an empty anchor target (<code>href="#"</code>) rather than a link to Google Maps.
+          </p>
+        </div>
+
+        <!-- Category 2 -->
+        <div class="finding-item">
+          <div class="finding-header">
+            <h3>2. Mobile Layout</h3>
+            <span class="badge badge-warning">Issue found</span>
+          </div>
+          <p>
+            On standard smartphone screens below 420px (such as iPhone SE at 375px and iPhone 12/13/14 at 390px), the top hero pill badge (<em>"Google Developer Groups on Campus • AITR Indore"</em>) and heading container exceed the screen width. This causes horizontal overflow, which pushes the mobile hamburger menu toggle button off-screen to the right.
+          </p>
+        </div>
+
+        <!-- Category 3 -->
+        <div class="finding-item">
+          <div class="finding-header">
+            <h3>3. Text Alignment</h3>
+            <span class="badge badge-warning">Issue found</span>
+          </div>
+          <p>
+            On desktop, text alignment is balanced, clean, and properly centered. However, on mobile devices under 420px, the horizontal overflow causes hero titles, subtitle text, and card labels to appear cut off along the right display edge.
+          </p>
+        </div>
+
+        <!-- Category 4 -->
+        <div class="finding-item">
+          <div class="finding-header">
+            <h3>4. Visual Glitches</h3>
+            <span class="badge badge-warning">Issue found</span>
+          </div>
+          <p>
+            Desktop displays without visual glitches. On mobile viewports under 420px, visual clipping occurs along the right edge of cards, buttons, and the top Google 4-color stripe due to the horizontal layout overflow.
+          </p>
+        </div>
+
+        <!-- Category 5 -->
+        <div class="finding-item">
+          <div class="finding-header">
+            <h3>5. Overall Navigation &amp; Usability</h3>
+            <span class="badge badge-warning">Issue found</span>
+          </div>
+          <p>
+            "Events" is a flagship activity of any GDG chapter, but it is currently absent from the main desktop navigation bar (which lists Home, Announcements, Team, About, Gallery, Contact). Users can only access Events via the hero button or footer links. Additionally, the mobile menu button is difficult to reach on small phones because it gets pushed outside the viewport.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 5. Suggestions -->
+    <section class="card card-light">
+      <h2>Suggestions</h2>
+      <ul class="suggestions-list">
+        <li>
+          <strong>Better mobile responsiveness:</strong> Fix horizontal overflow on screens under 420px by adding <code>max-width: 100%</code> and <code>flex-wrap: wrap</code> to the hero pill badge, and adjusting the hero heading font size minimum clamp from 36px to 26px so the hamburger menu and text stay fully visible on all mobile phones.
+        </li>
+        <li>
+          <strong>Improved text spacing and alignment:</strong> Apply responsive padding (e.g., <code>padding: 0 16px</code>) to mobile content containers to prevent text from overflowing or touching screen boundaries on narrow displays.
+        </li>
+        <li>
+          <strong>Clearer navigation:</strong> Add an "Events" link directly to the top desktop navigation bar so users can quickly discover workshops and study jams; keep the mobile hamburger button pinned inside the viewport at all times.
+        </li>
+        <li>
+          <strong>Better visual consistency:</strong> Replace the placeholder <code>href="#"</code> on the Contact page location card with an actual Google Maps URL for Acropolis Institute of Technology and Research (AITR), Indore.
+        </li>
+      </ul>
+    </section>
+
+    <!-- 6. Desktop Review -->
+    <section class="card card-light">
+      <h2>Desktop Review</h2>
+      <p>
+        Tested on desktop resolutions (1280x800 and 1920x1080). The website delivers a clean, modern developer community presentation. The signature Google 4-color top bar (Blue, Red, Yellow, Green) sets a branded tone, followed by an organized navigation bar, high-impact hero banner, and clean stats cards (1250+ active members, 25+ events, 450+ cloud badges, 8+ hackathons). Workshop listings, mission points, and chapter lead profiles (Dr. Kamal K. Sethi, Dr. Narendra Pal Singh Rathore, Dr. Priyanka Jangde) are arranged in well-proportioned multi-column grids. Page load speeds are fast and text is crisp. The main usability improvement needed is adding "Events" to the top navigation header.
+      </p>
+    </section>
+
+    <!-- 7. Mobile Review -->
+    <section class="card card-lightest">
+      <h2>Mobile Review</h2>
+      <p>
+        Tested across mobile viewports (375px iPhone SE, 390px iPhone 12/13/14, 480px, and 768px). On larger mobile screens (480px and wider), the layout stacks cleanly and the hamburger menu works smoothly. However, on standard smartphones under 420px width, the hero pill badge and header container cause horizontal overflow. This clips text along the right screen margin and pushes the hamburger toggle off-screen, making navigation hard to access without horizontal scrolling. Allowing the badge to wrap and tuning container widths will make the mobile experience fully responsive and accessible.
+      </p>
+    </section>
+
+  </main>
+
+</body>
+</html>

@@ -1,0 +1,329 @@
+/* ===================================================
+   GDG AITR Portal Review & Suggestions - Stylesheet
+   Color Palette: Dark-to-Light Teal / Green Layered Palette
+   - Background:              #0B3732 (Very dark deep teal)
+   - Dark cards/elements:     #174B45 (Deep teal)
+   - Medium cards:            #3F7669 (Muted teal-green)
+   - Light cards:             #B8D7C5 (Soft sage green)
+   - Lightest card/highlight: #DDF2E2 (Pale mint green)
+   - Text on dark areas:      #EAF6EE (Soft white/mint)
+   - Text on light areas:     #123D38 (Dark teal)
+   =================================================== */
+
+/* Design tokens */
+:root {
+  --bg-color: #0B3732;            /* Very dark deep teal */
+  --card-dark: #174B45;           /* Deep teal */
+  --card-medium: #3F7669;         /* Muted teal-green */
+  --card-light: #B8D7C5;          /* Soft sage green */
+  --card-lightest: #DDF2E2;       /* Pale mint green */
+  
+  --text-on-dark: #EAF6EE;        /* Soft white/mint */
+  --text-on-dark-muted: #B8D7C5;  /* Soft sage text for subtle notes */
+  --text-on-light: #123D38;       /* Dark teal */
+  --text-on-light-muted: #245750; /* Slightly muted dark teal */
+  
+  --card-radius: 8px;             /* Preserved rounded corners */
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.25), 0 1px 2px rgba(0, 0, 0, 0.35);
+}
+
+/* Reset margins and set standard box sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-on-dark);
+  line-height: 1.6;
+  padding: 24px 16px;
+}
+
+/* Main container to center content on desktop */
+.page-container {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Base card styling */
+.card {
+  border-radius: var(--card-radius);
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+
+/* ===================================================
+   Dark-to-Light Green/Teal Layered Progression
+   =================================================== */
+
+/* 1. Dark Cards & Elements (#174B45) */
+.card-dark,
+.title-card,
+.link-card {
+  background-color: var(--card-dark);
+  border: 1px solid rgba(234, 246, 238, 0.15);
+  color: var(--text-on-dark);
+}
+
+.title-card {
+  border-top: 5px solid var(--card-light);
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.title-card h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--card-lightest);
+}
+
+.card-dark h2 {
+  font-size: 1.25rem;
+  margin-bottom: 14px;
+  color: var(--card-lightest);
+  border-bottom: 2px solid rgba(221, 242, 226, 0.2);
+  padding-bottom: 6px;
+}
+
+.card-dark p {
+  color: var(--text-on-dark);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.link-card a {
+  color: var(--card-lightest);
+  text-decoration: none;
+  font-weight: 600;
+  word-break: break-all;
+}
+
+.link-card a:hover {
+  text-decoration: underline;
+  color: #ffffff;
+}
+
+/* 2. Medium Cards (#3F7669) */
+.card-medium {
+  background-color: var(--card-medium);
+  border: 1px solid rgba(234, 246, 238, 0.18);
+  color: var(--text-on-dark);
+}
+
+.card-medium h2 {
+  font-size: 1.25rem;
+  margin-bottom: 14px;
+  color: var(--card-lightest);
+  border-bottom: 2px solid rgba(221, 242, 226, 0.25);
+  padding-bottom: 6px;
+}
+
+.card-medium p {
+  color: var(--text-on-dark);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.card-medium .section-intro {
+  color: var(--card-lightest);
+  margin-bottom: 16px;
+}
+
+/* 3. Light Cards (#B8D7C5) */
+.card-light {
+  background-color: var(--card-light);
+  border: 1px solid rgba(18, 61, 56, 0.15);
+  color: var(--text-on-light);
+}
+
+.card-light h2 {
+  font-size: 1.25rem;
+  margin-bottom: 14px;
+  color: var(--text-on-light);
+  border-bottom: 2px solid rgba(18, 61, 56, 0.2);
+  padding-bottom: 6px;
+}
+
+.card-light p {
+  color: var(--text-on-light);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.card-light strong {
+  color: #0B3732;
+}
+
+/* 4. Lightest Card / Highlight (#DDF2E2) */
+.card-lightest {
+  background-color: var(--card-lightest);
+  border: 1px solid rgba(18, 61, 56, 0.2);
+  color: var(--text-on-light);
+}
+
+.card-lightest h2 {
+  font-size: 1.25rem;
+  margin-bottom: 14px;
+  color: var(--text-on-light);
+  border-bottom: 2px solid rgba(18, 61, 56, 0.2);
+  padding-bottom: 6px;
+}
+
+.card-lightest p {
+  color: var(--text-on-light);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* ===================================================
+   Lists & Checklist Items
+   =================================================== */
+.checklist,
+.suggestions-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.checklist li,
+.suggestions-list li {
+  position: relative;
+  padding-left: 28px;
+}
+
+.checklist li {
+  color: var(--text-on-dark);
+}
+
+.suggestions-list li {
+  color: var(--text-on-light);
+}
+
+.checklist li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--card-lightest);
+  font-weight: bold;
+}
+
+.suggestions-list li::before {
+  content: "💡";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 0.95rem;
+}
+
+/* ===================================================
+   Inner Elements (Findings, Badges, Code)
+   =================================================== */
+.findings-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Nested dark card inside medium card for layered appearance */
+.finding-item {
+  background-color: var(--card-dark);
+  border: 1px solid rgba(234, 246, 238, 0.15);
+  border-radius: 6px;
+  padding: 16px;
+}
+
+.finding-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.finding-header h3 {
+  font-size: 1.05rem;
+  color: var(--card-lightest);
+}
+
+.finding-item p {
+  color: var(--text-on-dark);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Badges */
+.badge {
+  display: inline-block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 12px;
+}
+
+.badge-success {
+  background-color: var(--card-lightest);
+  color: var(--text-on-light);
+  border: 1px solid var(--card-light);
+}
+
+.badge-warning {
+  background-color: var(--card-light);
+  color: var(--text-on-light);
+  border: 1px solid var(--card-medium);
+}
+
+/* Code tags */
+code {
+  background-color: var(--bg-color);
+  color: var(--card-lightest);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.9em;
+  font-family: Consolas, monospace;
+}
+
+.card-light code,
+.card-lightest code {
+  background-color: rgba(18, 61, 56, 0.12);
+  color: var(--text-on-light);
+}
+
+/* ===================================================
+   Responsive Mobile Adjustments
+   =================================================== */
+@media (max-width: 650px) {
+  body {
+    padding: 16px 10px;
+  }
+
+  .title-card {
+    padding: 22px 14px;
+  }
+
+  .title-card h1 {
+    font-size: 1.35rem;
+  }
+
+  .card {
+    padding: 18px 14px;
+  }
+
+  .card h2 {
+    font-size: 1.15rem;
+  }
+
+  .finding-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
