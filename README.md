@@ -1,5 +1,7 @@
 # GDG AITR Portal Review & Suggestions (Section A)
 
+LIVE DEPLOYED LINK: https://gdg-portal-review.vercel.app/
+
 A responsive, beginner-level audit page created for **Section A** of the GDG AITR task.
 
 This project documents a genuine manual verification of the live GDG AITR website ([https://gdgocaitr.vercel.app/](https://gdgocaitr.vercel.app/)) tested across both desktop and mobile viewports.
